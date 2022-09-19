@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+  
+ <hibernate-mapping>  
+  <class table="qualification" name = "com.ideas2it.employees.model.Qualification">  
+    <id name="qualificationId" column = "qualificationId">  
+     <generator class="native"></generator>  
+    </id>        
+    <property name="qualification"></property>    
+    </class>  
+            
+ </hibernate-mapping>

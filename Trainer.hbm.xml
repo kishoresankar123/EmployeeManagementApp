@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+  
+ <hibernate-mapping>  
+  <class table="trainer" name = "com.ideas2it.employees.model.Trainer">  
+    <id name="trainer_id">  
+     <generator class="native"></generator>  
+    </id>        
+    <property name="domain"></property> 
+    <property name="salary"></property>   
+    <many-to-one name = "employee" class = "com.ideas2it.employees.model.Employee"  column = "empid" cascade = "all" unique ="true" not-null = "true"/>    
+    <set name="trainees" table="assosiation" cascade="save-update" inverse = "false">
+            <key column="trainer_id"/>
+            <many-to-many column="trainee_id" class="com.ideas2it.employees.model.Trainee" />
+    </set>
+ </class>            
+ </hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+  
+ <hibernate-mapping>  
+  <class table="employee" name = "com.ideas2it.employees.model.Employee">  
+    <id name="employeeId" column="empid">  
+     <generator class="native"></generator>  
+    </id>        
+    <property name="employeeName" column = "name"></property> 
+    <property name="employeeMail" column = "mail"></property> 
+    <property name="employeePhoneNumber" column = "phone_number"></property>
+    <property name="employeeDateOfBirth" column = "dob"></property>
+    <property name="employeeGender" column = "gender"></property>
+    <many-to-one name = "role" class = "com.ideas2it.employees.model.Role"  column = "roleid" cascade = "all" not-null = "true"/>
+    <many-to-one name = "qualification" class = "com.ideas2it.employees.model.Qualification"  column = "qualificationId" cascade = "all" not-null = "true"/>
+  </class>  
+            
+ </hibernate-mapping>
